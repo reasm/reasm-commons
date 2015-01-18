@@ -1,2 +1,2 @@
-This is a Java project template for the Luna version of Eclipse JDT and
-Eclipse m2e. It also enables the FindBugs builder.
+**reasm-commons** is a library containing utility classes useful to develop
+reasm-based assemblers.
