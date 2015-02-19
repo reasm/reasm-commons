@@ -44,22 +44,23 @@ public final class LogicalLineRangeReaderSkipHandler extends SkipHandler {
             break;
 
         case EXPECT_CR_OR_LF:
-            if (reader.getCurrentChar() == '\r') {
+            if (reader.getCurrentCodePoint() == '\r') {
                 this.continuationCharacterSkipState = ContinuationCharacterSkipState.EXPECT_LF_OR_WHITESPACE;
                 return true;
             }
 
-            if (reader.getCurrentChar() == '\n') {
+            if (reader.getCurrentCodePoint() == '\n') {
                 this.continuationCharacterSkipState = ContinuationCharacterSkipState.EXPECT_WHITESPACE;
                 return true;
             }
 
-            throw new AssertionError("Unexpected character: '" + reader.getCurrentChar() + "'"); // unreachable
+            throw new AssertionError(new StringBuilder("Unexpected character: '").appendCodePoint(reader.getCurrentCodePoint())
+                    .append("'").toString()); // unreachable
 
         case EXPECT_LF_OR_WHITESPACE:
             this.continuationCharacterSkipState = ContinuationCharacterSkipState.EXPECT_WHITESPACE;
 
-            if (reader.getCurrentChar() == '\n') {
+            if (reader.getCurrentCodePoint() == '\n') {
                 return true;
             }
 
