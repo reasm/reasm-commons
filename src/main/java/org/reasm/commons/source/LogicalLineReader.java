@@ -145,7 +145,7 @@ public final class LogicalLineReader {
         }
     }
 
-    private void skipContinuationCharacters() {
+    private final void skipContinuationCharacters() {
         while (this.logicalLine.isContinuationCharacter(this.reader.getCurrentPosition() - this.startOfLogicalLine)) {
             this.reader.advance();
 
