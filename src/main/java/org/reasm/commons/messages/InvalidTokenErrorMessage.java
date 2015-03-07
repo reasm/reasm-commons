@@ -23,7 +23,7 @@ public class InvalidTokenErrorMessage extends AssemblyErrorMessage {
      *            the invalid token
      */
     public InvalidTokenErrorMessage(@Nonnull String token) {
-        super("Invalid token: <" + Objects.requireNonNull(token, "token").toString() + ">");
+        super("Invalid token: <" + Objects.requireNonNull(token, "token") + ">");
         this.token = token;
     }
 
