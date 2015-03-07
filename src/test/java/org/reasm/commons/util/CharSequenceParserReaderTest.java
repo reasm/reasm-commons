@@ -17,9 +17,9 @@ import org.junit.Test;
 public class CharSequenceParserReaderTest {
 
     @Nonnull
-    private static final CharSequence CHAR_SEQUENCE = new String("abc");
+    private static final CharSequence CHAR_SEQUENCE = "abc";
     @Nonnull
-    private static final CharSequence CHAR_SEQUENCE_NON_BMP = new String("x\uD83C\uDF41y");
+    private static final CharSequence CHAR_SEQUENCE_NON_BMP = "x\uD83C\uDF41y";
 
     /**
      * Asserts that {@link CharSequenceParserReader#advance()} advances the {@link CharSequenceParserReader} by one code point.
