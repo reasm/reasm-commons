@@ -46,7 +46,7 @@ public abstract class IfBlockParser extends BlockParser {
      *            the {@link BlockDirective} to test
      * @return <code>true</code> if the directive is an <code>ELSE</code> directive, or <code>false</code> otherwise
      */
-    protected abstract boolean isElseDirective(@Nonnull BlockDirective blockDirective);
+    protected abstract boolean isElseDirective(@CheckForNull BlockDirective blockDirective);
 
     /**
      * Determines whether the specified directive is an <code>ELSEIF</code> directive.
@@ -55,7 +55,7 @@ public abstract class IfBlockParser extends BlockParser {
      *            the {@link BlockDirective} to test
      * @return <code>true</code> if the directive is an <code>ELSEIF</code> directive, or <code>false</code> otherwise
      */
-    protected abstract boolean isElseIfDirective(@Nonnull BlockDirective blockDirective);
+    protected abstract boolean isElseIfDirective(@CheckForNull BlockDirective blockDirective);
 
     /**
      * Determines whether the specified directive is an <code>ENDIF</code> directive.
@@ -64,7 +64,7 @@ public abstract class IfBlockParser extends BlockParser {
      *            the {@link BlockDirective} to test
      * @return <code>true</code> if the directive is an <code>ENDIF</code> directive, or <code>false</code> otherwise
      */
-    protected abstract boolean isEndIfDirective(@Nonnull BlockDirective blockDirective);
+    protected abstract boolean isEndIfDirective(@CheckForNull BlockDirective blockDirective);
 
     @Override
     final SourceNode parseBlock(SourceNodeProducer sourceNodeProducer, BlockDirectiveLine firstLine) {
