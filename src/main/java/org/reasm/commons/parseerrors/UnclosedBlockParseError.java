@@ -26,7 +26,7 @@ public class UnclosedBlockParseError extends ParseError {
      *            the starting directive of the block that was not closed
      */
     public UnclosedBlockParseError(@Nonnull BlockDirective startingBlockDirective) {
-        super("Block starting with \"" + Objects.requireNonNull(startingBlockDirective, "startingBlockDirective")
+        super("Block starting with \"" + Objects.requireNonNull(startingBlockDirective, "startingBlockDirective").getMnemonic()
                 + "\" is not closed");
         this.startingBlockDirective = startingBlockDirective;
     }
